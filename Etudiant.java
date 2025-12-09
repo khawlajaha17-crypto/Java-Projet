@@ -1,37 +1,36 @@
-import java.util.HashMap;
-import java.util.Map;
+package app.models;
 
-public class Etudiant {
-    private String nom;
-    private String prenom;
-    private String matricule;
-    private Map <String, Double> notes; // Matière -> Note
-    
-    public Etudiant(String nom, String prenom, String matricule) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.matricule = matricule;
-        this.notes = new HashMap <>();
+public class Student {
+
+    private int id;
+    private String name;
+    private String module;
+    private double note;
+
+    public Student(Int id, String name, String module, double note) {
+        this.id = id;
+        this.name = name;
+        this.module = module;
+        this.note = note;
     }
-    
-    // Getters et Setters
-    public String getNom() { return nom; }
-    public String getPrenom() { return prenom; }
-    public String getMatricule() { return matricule; }
-    public Map <String, Double> getNotes() { return notes; }
-    
-    public void ajouterNote(String matiere, double note) {
-        notes.put(matiere, note);
+
+    public Int getId(){
+        return id;
     }
-    
-    public double getMoyenne() {
-        if (notes.isEmpty()) return 0.0;
-        return notes.values().stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
+    public String getName() {
+        return name;
     }
-    
+
+    public String getModule() {
+        return module;
+    }
+
+    public double getNote() {
+        return note;
+    }
+
     @Override
     public String toString() {
-        return String.format("%s %s (Matricule: %s) - Moyenne: %.2f", 
-                           prenom, nom, matricule, getMoyenne());
+        return name + " | " + module + " | " + note;
     }
 }
