@@ -1,6 +1,6 @@
 # Gestion des notes
 
-Projet Java pour gérer des étudiants et leurs notes en utilisant un fichier CSV.
+Projet Java pour gérer Les étudiants et leurs notes en utilisant un fichier CSV.
 
 ## Description
 
